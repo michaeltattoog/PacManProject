@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import MainPageCard from "./Pages/HomePage";
+import NavBar from "./components/NavBar";
+import { Route, Routes } from "react-router-dom";
+import PacFam from "./Pages/PacFam";
+import CharacterInfo from "./Pages/GhostFam";
+import Gamez from "./Pages/GameInfos";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      
+        <NavBar />
+          <Routes>
+          <Route path='/' element={<MainPageCard />}/>
+          <Route path='/PacManFamily' element={<PacFam />}/>
+          <Route path='/GhostFamily' element={<CharacterInfo/>}/>
+          <Route path='/PacGames' element={<Gamez />}/>
+          </Routes>
+      
+    </>
   );
 }
 
